@@ -25,6 +25,7 @@ function Count() {
     <div>
       <CountRenderer />
       <Button />
+      <IsEven></IsEven>
     </div>
   );
 }
@@ -32,6 +33,11 @@ function Count() {
 function CountRenderer() {
   const count = useRecoilValue(countAtom);
   return <div>{count}</div>;
+}
+
+function IsEven() {
+  const even = useRecoilValue(countAtom);
+  return <div>{even % 2 == 0 ? "It is even" : "It is odd"}</div>;
 }
 
 function Button() {
